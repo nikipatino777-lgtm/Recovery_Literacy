@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Recovery Literacy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500&display=swap">
+<style>
+/* Layout: a plain white page. Typed text is the argument; handwriting marks the maker's own hand. */
+:root {
+  color-scheme: light;
+  --page: #ffffff;
+  --ink: #1f1f1f;
+  --muted: #7a7a7a;
+  --hand-ink: #1e3a6b;   /* pen blue */
+  --link: #1f1f1f;
+  --hair: #e6e6e6;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--page); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.125rem; line-height: 1.75;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 2rem 5rem;
+}
+.wrap { max-width: 42rem; margin: 0 auto; display: grid; gap: 2.5rem; }
+.topbar { display: flex; justify-content: flex-end; font-size: .95rem; }
+.topbar span { display: none; }
+.card { min-width: 0; }
+.card > header { margin-bottom: 1.75rem; display: grid; gap: .1rem; }
+.numeral { font-family: var(--font-hand); font-size: 2.4rem; line-height: 1; color: var(--hand-ink); justify-self: center; text-align: center; margin-bottom: .4rem; font-weight: 500; }
+h1, h2 { font-weight: 700; line-height: 1.25; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+h2 { font-size: clamp(1.4rem, 3.6vw, 1.75rem); }
+h3 { font-size: 1.1rem; font-weight: 700; margin: 2.2rem 0 .3rem; }
+p { margin: 0 0 1.15em; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--hand-ink); outline-offset: 2px; }
+.byline { font-size: 1rem; color: var(--muted); }
+
+.hand { font-family: var(--font-hand); color: var(--hand-ink); font-size: 1.55em; line-height: 1.3; }
+p.hand { margin: 1.4rem 0 1.6rem; }
+span.hand { font-size: 1.45em; line-height: 1; }
+
+figure { margin: 2rem 0; display: grid; gap: .5rem; }
+figure img { width: 100%; height: auto; border: 1px solid var(--hair); }
+figcaption { font-size: .95rem; line-height: 1.55; color: var(--muted); }
+figcaption b { color: var(--ink); font-weight: 700; display: block; }
+figcaption i { color: var(--ink); }
+
+.qlist { display: grid; gap: .9rem; margin: 1rem 0 1.4rem; }
+.qlist p { margin: 0; }
+.qlist strong { font-family: var(--font-hand); font-weight: 400; font-size: 1.5em; color: var(--hand-ink); margin-right: .4rem; }
+
+.index { list-style: none; margin: 0; padding: 0; display: grid; gap: .15rem; }
+.index li { display: block; font-family: var(--font-hand); font-size: 1.6rem; line-height: 1.35; color: var(--hand-ink); }
+.index .dots { display: none; }
+.index .entry::after { content: ", "; }
+.index a.pg { color: var(--hand-ink); }
+.index-note { display: none; }
+
+.pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; font-family: var(--font-hand); font-size: 1.6rem; }
+.pager a { color: var(--hand-ink); }
+.pager .spacer { flex: 1; }
+
+.refs p { padding-left: 2rem; text-indent: -2rem; font-size: 1rem; }
+.cta { font-family: var(--font-hand); font-size: 1.7rem; color: var(--hand-ink); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <span>Kairos · Topoi · webtext submission draft</span>
+    <a href="#start">Index</a>
+  </div>
+
+  <!-- ============ START: cover, abstract, index ============ -->
+  <section class="view card" id="start" aria-labelledby="t-start">
+    <header>
+      <span class="numeral">Recovery Literacy</span>
+      <h1 id="t-start">Recovery Literacy: Reclaiming Authorship of the Stories Trauma Makes Unreachable</h1>
+      <span class="byline">Niki Patino · University of Central Florida<br>ENC 6428: Digital Literacies</span>
+    </header>
+
+    <h3>Abstract</h3>
+    <div class="abstract">
+      <p>Trauma can make a person’s own story unreachable, a condition this webtext calls narrative dispossession, extending McGranahan’s (2010) term from communities to the individual. Working as both maker and analyst, I test a framework on my own Twine, <em>What Happened: Indexed Evidence</em>, with Santos’s (2011) <em>Kairos</em> webtext as a comparison. Tracing literacy theory from skill to social practice to design, I argue that each turn moved the obstacle to authorship further outside the writer, and that trauma moves it back inside. Clinical research shows that traumatic memory returns as sensory fragments before it becomes narrative, and MacCurdy (2007) shows how writers make that move. Building on Bacibianco’s (2026) use of recovery literacy, I extend the term from addiction to trauma and from who may tell a story to whether the teller can reach it at all. Read through this framework, the Twine’s index form enacts a memory that is unreachable, fragmented, and slowly shaped into a story the reader helps author. A heuristic adapted from Cook’s (2002) layered literacies offers questions makers and readers can put to any work. Testifying and historical trauma extend the frame to communities, where a shared story can restore access or replace it. The missing entry, finally, turns out to have been composed by the index all along.</p>
+    </div>
+
+    <h3>Index</h3>
+    <ul class="index">
+      <li><span class="entry">Entry does not exist, this</span><span class="dots"></span><a class="pg" href="#s1">I</a></li>
+      <li><span class="entry">Index, writing from inside the</span><span class="dots"></span><a class="pg" href="#s2">II</a></li>
+      <li><span class="entry">Literacy, what it has come to mean</span><span class="dots"></span><a class="pg" href="#s3">III</a></li>
+      <li><span class="entry">Recovery, what it requires</span><span class="dots"></span><a class="pg" href="#s4">IV</a></li>
+      <li><span class="entry">Recovery literacy</span><span class="dots"></span><a class="pg" href="#s5">V</a></li>
+      <li><span class="entry"><em>What Happened</em>, reading</span><span class="dots"></span><a class="pg" href="#s6">VI</a></li>
+      <li><span class="entry">Questions for reaching a story</span><span class="dots"></span><a class="pg" href="#s7">VII</a></li>
+      <li><span class="entry">Communal layer</span><span class="dots"></span><a class="pg" href="#s8">VIII</a></li>
+      <li><span class="entry">Entry, revisited</span><span class="dots"></span><a class="pg" href="#s9">IX</a></li>
+      <li><span class="entry">About this webtext</span><span class="dots"></span><a class="pg" href="#about">note</a></li>
+      <li><span class="entry">References</span><span class="dots"></span><a class="pg" href="#references">refs</a></li>
+    </ul>
+        <a class="cta" href="#s1">Begin at I</a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="view card" id="about" hidden aria-labelledby="t-about">
+    <header><span class="numeral">Note</span><h2 id="t-about">About This Webtext</h2></header>
+    <p>The contents page is written as an index, so the reader meets the argument in the same form as the test case. Typed text carries the argument; handwriting marks the maker’s own hand.</p>
+    <p>The sections are numbered and run in order, with previous and next links on every page, but the index lets a reader enter anywhere. That is the same freedom of order the Twine offers, without its withheld pages: everything argued here can be reached.</p>
+    <p>The Twine, <em>What Happened: Indexed Evidence</em>, is linked rather than embedded, so it opens in its own window and keeps its own navigation. For a <em>Kairos</em> submission, a copy of the Twine would be hosted inside the webtext’s folder so the piece remains stable over time. All six figures carry alt text, and figures are numbered in reading order.</p>
+    <p>Play the Twine: <a href="https://nikipatinoucf.github.io/index-what-happened/" target="_blank" rel="noopener">What Happened: Indexed Evidence</a>.</p>
+  </section>
+
+  <!-- ============ I ============ -->
+  <section class="view card" id="s1" hidden aria-labelledby="t-s1">
+    <header><span class="numeral">I</span><h2 id="t-s1">This Entry Does Not Exist: The Mediated Layer</h2></header>
+    <p>REDACTED. That is all the reader finds.</p>
+    <p>In <em>What Happened: Indexed Evidence,</em> the Twine I made as the test case for this project, the story is told the way a back-of-book index tells one: entries, page numbers, cross-references. Nothing else. A reader comes to the entry “Help, asking for” and clicks. The index offers page numbers, the way an index should. Every one of them is REDACTED. The reader tries one. Nothing. The reader tries the next. Nothing again.</p>
+    <figure>
+      <img src="img/fig1.png" alt="A screenshot styled like a page from a printed index on cream lined paper. Bold text reads REDACTED, followed by a row of underlined, linked page numbers: 12 to 13, 23, 34, 45, 56 to 58, 67 to 68, 89, 102, 134, 137 to 138, 156, 178, and 201." width="542" height="153">
+      <figcaption><b>Figure 1</b><i>The “Help, Asking For” Entry in</i> What Happened: Indexed Evidence. The entry offers fourteen page references. Every one leads to a REDACTED page.</figcaption>
+    </figure>
+    <p>After the last empty page, the screen asks a question: “What are you looking for?”</p>
+    <figure>
+      <img src="img/fig2.png" alt="A screenshot on the same cream lined background. The question What are you looking for? sits above an empty text box and a plain Search link." width="405" height="294">
+      <figcaption><b>Figure 2</b><i>The Search Screen.</i> After the last empty page, the index asks the reader what they are looking for.</figcaption>
+    </figure>
+    <p>The reader can type anything into the search. Whatever they type, the answer is the same: “This entry does not exist.”</p>
+    <figure>
+      <img src="img/fig3.png" alt="A screenshot reading This entry does not exist. in large serif type, with a small gray Index link below it leading back to the index." width="408" height="212">
+      <figcaption><b>Figure 3</b><i>The Search Result.</i> Whatever the reader types, the answer is the same.</figcaption>
+    </figure>
+    <p>From the reader’s side, the sequence feels like a reasonable request meeting a system that cannot answer it. There is something to find; the index itself says so, with a heading and page numbers to prove it. The reader follows the trail exactly as instructed and arrives at a refusal.</p>
+    <p class="hand">I built it that way.</p>
+    <p>The sequence does not describe a gap; it makes the reader perform one. Not every reader gets that far. The REDACTED search sits along only one path through the index, and a reader can only follow the links the index offers. Some never arrive. That limit is deliberate. The headings exist. The page numbers exist. The pages do not. The space between them is the subject here.</p>
+    <p>In Project 1 for this course, I defined my keyword, mediated authorship, as the way platforms, tools, and institutions shape who gets to author a text. The premise beneath that definition is that writing tools are never neutral. Hayles (1999) makes this case in her account of how information technologies reshaped everyday life. Following Kittler’s history of the typewriter, she argues that technologies of inscription become media when they intervene between writer and text, “inserting themselves into the chain of textual production” (p. 26). Later in the chapter, describing how virtual reality users learn the stylized gestures a computer can recognize, Hayles clarifies that the influence runs both ways: “The computer molds the human even as the human builds the computer” (p. 47).</p>
+    <p>Recovery literacy turns that idea inward. Sometimes what intervenes between a writer and a text is not a platform but the writer’s own history. Trauma inserts itself into the chain of textual production before a single word is written, and the question becomes whether the story can be reached at all. I take the term <em>narrative dispossession</em> from McGranahan (2010) and extend it. Opening an account of Tibetan women whose war histories their community does not recognize, she observes that possessing one’s own life story “is not a given,” because thinking of a life as narratable involves social processes “operative well beyond individual processes of reflection or experience” (p. 768). Her conclusion is the one that this project builds on, that “to narrate one’s life is not just an issue of how, but also a matter of if” (p. 768). For McGranahan, the <em>if</em> is social, a question of what a community’s norms admit as history. I move it one layer in. For the survivor, the <em>if</em> precedes any audience: before a story can be refused recognition, it has to be reachable by the person whose story it is. That inward dispossession rests on Herman’s (1997) account of trauma, where she names disempowerment and disconnection as trauma’s core experiences. She then argues that because others can offer support but not cure, the survivor “must be the author and arbiter of her own recovery” (p. 191). Introducing the second stage of recovery, in which the survivor tells the story of the trauma, she draws on Janet’s distinction between ordinary memory, “the action of telling a story,” and traumatic memory, which is “wordless and static” (p. 254). Narrative dispossession describes the space between those two kinds of memory, where the experience belongs to the person but the story does not, yet. The REDACTED search enacts this in the Twine. Some readers never arrive at it, just as a survivor may live without ever reaching the experience at all. The ones who do arrive find the heading but not the story.</p>
+    <p>Recovery literacy names the practices by which that authorship is reclaimed.</p>
+  </section>
+
+  <!-- ============ II ============ -->
+  <section class="view card" id="s2" hidden aria-labelledby="t-s2">
+    <header><span class="numeral">II</span><h2 id="t-s2">Writing from Inside the Index</h2></header>
+    <p>This project uses two methods that share a premise: knowledge can come from inside the thing being studied. Autoethnography lets me treat my own experience of making as evidence about a cultural practice. Critical making lets the Twine serve as an argument in its own right, built and then read. Together, they place me in two roles at once, maker and analyst. That is the situated maker’s view this project works from.</p>
+    <p>The procedure is simple. I assembled the recovery literacy framework from course readings on literacy, recovery, and authorship (Sections III through V). Then I test it on <em>What Happened</em>, reading its structure, navigation, and withheld pages through the framework (Section VI). Santos’s (2011) Kairos webtext serves as a comparison case. Santos tells how a parents’ online network noticed the white eye reflex in a photo of his infant daughter, which led to her retinoblastoma diagnosis. He then argues against critics who see social media as feeding narcissism, contending that the need for validation is old and only the tools for meeting it are new. His is a story of crisis told in panels, and it gives the heuristic in Section VII a second work to be checked against.</p>
+    <figure>
+      <img src="img/fig4.png" alt="A photograph of about twenty handwritten index cards spread and overlapping on a white marble desk. Each card has an entry heading followed by page numbers. Legible headings include Silence, Cycles, Good days, Reinforcement (variable), Need, paradox of, Help (asking for), and REDACTED, which is followed by a long list of page numbers." width="424" height="503">
+      <figcaption><b>Figure 4</b><i>Index Cards From the Composition of</i> What Happened. Each card held one entry and its page references, written by hand before any passage was built in Twine.</figcaption>
+    </figure>
+    <p class="hand">These are the cards.</p>
+    <p>I wrote them by hand before I typed a single passage, one heading to a card, and they came out faster than I expected, already in relationship to one another. “Silence” needed “Isolation, social.” “Need, paradox of” needed “Thing, the.” I laid them on the floor and moved them around until they made an index. They wrote it one missing entry at a time.</p>
+    <p>The limit is plain. This is one case, made and analyzed by the same person. I cannot read the Twine the way a stranger would. I know what the REDACTED pages withhold.</p>
+    <p class="hand">A stranger meets a blank; I meet a blank I put there.</p>
+    <p>I don’t try to neutralize that position. I name it as the method’s condition, so readers can weigh my claims with it in view.</p>
+    <p>Three sources ground this approach. Critiquing the visualizing technologies of modern science, from satellites to imaging systems that claim to see everything without being anywhere, Haraway (1996) names that stance “the god-trick of seeing everything from nowhere” (p. 189). Haraway’s case for feminist objectivity grounded in particular, embodied location arrives at a simple moral, that “only partial perspective promises objective vision” (p. 190). A maker reading her own work is about as partial as a perspective gets. Haraway’s argument lets that partiality count as accountable knowledge rather than a flaw to apologize for.</p>
+    <p>Opening their overview with a history of the method, Ellis et al. (2011) define autoethnography as research and writing that seeks to “systematically analyze” personal experience to understand cultural experiences (para. 1). The word <em>systematically</em> matters: Section VI works through named design choices rather than impressions. Memory complicates the maker’s position further. To explain why autoethnographers judge their work by narrative truth rather than exact recall, Ellis et al. state plainly that “memory is fallible” (para. 32).</p>
+    <p>Although Haraway and Ellis et al. account for how a maker can know their own work, they do not account for the making itself. Ratto (2011) and Salter and Moulthrop (2021) do. Explaining why he chose the term, Ratto (2011) writes that critical making “signals a desire to theoretically and pragmatically connect two modes of engagement with the world that are often held separate,” critical thinking and physical making (p. 253). The aim of critical making is “to use material forms of engagement with technologies to supplement and extend critical reflection” while locating the analysis in “the constructive process” rather than the finished object (p. 253). Although Ratto’s workshops are collaborative, the premise holds for a single maker. For me, the index cards, and not the Twine alone, are evidence.</p>
+    <p>Introducing their book’s two voices, Salter and Moulthrop describe themselves as by turns creative and reflective, people who make things and then think about what they have made, and they admit that “the making and the thinking may be hard to tell apart” (p. 10). Positioning their own relationship to the platform, they observe that Twine’s most lasting stories tend to be raw and vulnerable (p. 12). They frame their own book as both critical study and creative guide (p. 9). Their work lets the Twine function here as more than illustration; it is a site of thinking.</p>
+  </section>
+
+  <!-- ============ III ============ -->
+  <section class="view card" id="s3" hidden aria-labelledby="t-s3">
+    <header><span class="numeral">III</span><h2 id="t-s3">What Literacy Has Come to Mean</h2></header>
+    <p>Every major turn in literacy theory has relocated the obstacle to reading and writing, and each time it has moved the obstacle further from the writer’s interior. Kucer (2005) begins from the observation that disciplines remake literacy “in its own image” (p. 3) and answers with a model that is “dynamic and multidimensional” (p. 4), with cognitive, linguistic, sociocultural, and developmental dimensions at work in every act. The obstacle, in that model, is still partly inside the head. Gee (2011) moves it out. Reading and writing cannot be separated from the practices around them any more than the white squares can be removed from a chessboard (p. 41), and literacy becomes plural: a set of social practices, or literacies (p. 63). Now the obstacle is social. The New London Group (1996) moves it to the materials of design: meaning-makers draw on Available Designs, and “through their co-engagement in Designing, people transform their relations with each other, and so transform themselves” (p. 76). Vee (2013) moves it to the technology itself, defining literacy as “a human facility with a symbolic and infrastructural technology” (p. 45). Hayles (1999) completes the arc: the medium inserts itself “into the chain of textual production” (p. 26).</p>
+    <p>Mediated authorship, my original keyword, sits at the end of that arc. It names the condition in which the obstacle to authorship is wholly external: the platform, the tool, the institution.</p>
+    <p>What none of these accounts asks is what happens when the obstacle moves back inside, not as a cognitive skill deficit of the kind Kucer’s model could name, but as an experience the writer holds and cannot reach. That is the gap narrative dispossession fills. The survivor has the skill, the social practice, and the tool. All they lack is access to their own Available Designs. The REDACTED search is the place in the index where literacy, as usually defined, runs out.</p>
+    <p>Put Herman and the New London Group side by side, and a problem appears, though. Designing, for the latter, transforms the designer because it works on Available Designs; but traumatic memory, for the former, is “wordless and static” (Herman, 1997, p. 254). It is not available in the sense Design requires. It has no words to recombine and no shape to redesign. Van der Kolk (2014) describes the same impasse from the clinic: traumatic experience resists being put into words at all, because it was never laid down in language in the first place. A survivor who sits down to compose their story is a designer whose raw material is withheld from them, by them.</p>
+    <p>Ong (2002) supplies what turns this problem into a possibility. His large claims about oral and literate cultures are the ones Gee (2011) and the New Literacy Studies dismantled, and I do not adopt them. His smaller claim about the individual writer survives the critique: technologies are “interior transformations of consciousness” (p. 81), and writing gives what the writer lacks, since “to live and to understand fully, we need not only proximity but also distance” (p. 81). Distance is exactly what traumatic memory does not afford; it is static because it is too close.</p>
+    <p>Here Haraway (1996) does unexpected work. Her “god-trick of seeing everything from nowhere” (p. 189) describes a disembodied, unlocated vision. Dissociation is that vision turned inward: the survivor watching from nowhere, outside the body, with no position from which to tell. Haraway’s remedy, that “only partial perspective promises objective vision” (p. 190), is also the survivor’s: a story one can tell is told from somewhere. Recovery literacy is born from that possibility.</p>
+  </section>
+
+  <!-- ============ IV ============ -->
+  <section class="view card" id="s4" hidden aria-labelledby="t-s4">
+    <header><span class="numeral">IV</span><h2 id="t-s4">What Recovery Requires</h2></header>
+    <h3>Recovery as Capacity</h3>
+    <p>Recovery already has a working definition, and it comes from the addiction field. The Recovery Research Institute (n.d.) describes it as “improved physical, psychological, and social well-being and health” following a substance use disorder. Well-being is the measure, and the model is broad by design: housing, employment, relationships, and health all count.</p>
+    <p>That breadth is the model’s strength. It is also its limit. A person can meet every well-being measure, hold a job, keep the house, show up for the kids, and still hold an experience they cannot tell. Herman (1997) names the dimension the well-being framework leaves out when she makes the survivor “the author and arbiter of her own recovery” (p. 191): authorship is a condition of recovery, not just a result of it. So the definition this project uses is narrow. Recovery, here, is a capacity: the capacity to consciously reach experiences that were overwhelming, dissociated, or fragmented, and shape them into a story one can tell.</p>
+    <p>The two definitions do not compete. A capacity model sits inside a well-being model as one dimension among several, the narrative one, which the broader frame does not name. Keeping the term <em>recovery</em> rather than inventing another keeps that relationship visible, and it keeps faith with Bacibianco’s (2026) use of recovery literacy in addiction storytelling, taken up in Section V. What a capacity model adds is a question the well-being model cannot ask. Not “is this person doing better?” but “can this person reach this?” The REDACTED search is built to pose that question to a reader. The index is functioning. The entry has a heading and page numbers. By every external measure, the system is intact. What is missing is access.</p>
+    <h3>Fragments First</h3>
+    <p>Why would a story be unreachable to the person who lived it? The clinical answer is that it was never stored as a story.</p>
+    <p>Van der Kolk and Fisler (1995) interviewed 46 adults with PTSD about how their traumatic memories first returned. Reporting the modalities of traumatic memory, they write that “no subject reported having a narrative for the traumatic event as their initial mode of awareness,” and that all subjects “initially ‘remembered’ the trauma in the form of somatosensory or emotional flashback experiences” (p. 517). Over time, “a narrative memory started to emerge.” At the time of the study, 41 of the 46 were “able to narrate a satisfactory story about what happened to them,” while five, all survivors of childhood trauma, “continued to be unable to tell a coherent narrative with a beginning, middle, and end” (p. 517). The authors trace the pattern to Janet, who described a person “unable to make the recital which we call narrative memory, and yet he remains confronted by (the) difficult situation” (cited in van der Kolk &amp; Fisler, 1995, p. 511).</p>
+    <p>Herman (1997) describes the same movement from the clinical side. Introducing the stage of recovery in which the survivor tells the story, she contrasts ordinary memory, “the action of telling a story,” with traumatic memory, which is “wordless and static” (p. 254). Van der Kolk (2014) later restates his own findings for a general audience: traumatic memories are stored not as coherent narratives but as fragmented sensory and emotional traces, such as images, sounds, and physical sensations. Across the clinical accounts, the order is the same: the experience returns as sensation before it returns as story. Fragments first, then a story one can tell. The sequence matters for a literacy argument because it describes composition. The survivor is not retrieving a text that exists somewhere intact. They are assembling one from pieces that arrive out of order in sensory form without syntax. That is a design problem, and the index form in <em>What Happened</em> is built to show it: entries without pages, cross-references that lead to silence, a blank page where the story should be.</p>
+    <h3>Rhetoric and Composition on Trauma</h3>
+    <p>Rhetoric and composition has not always welcomed this material. The field’s long suspicion of personal writing, sharpened in the debates over expressivism, made trauma an uneasy subject for the writing classroom. MacCurdy (2007) writes against that resistance directly. Opening her book with a student who asked whether she could write about childhood abuse in a class journal, she acknowledges that “the academic opposition to personal writing has a theoretical as well as a practical edge” (p. 3), then argues for the writing anyway. Her case begins with how trauma is stored. Writing helps, she argues, “by unlocking these experiences from the parts of the brain that store iconic images and allowing us to put words to our difficult moments” (p. 2). Drawing on the same clinical literature traced here, she describes traumatic memories as “disjointed fragments of memory replete with sensory detail” (p. 22) and cites Herman’s term for them, “frozen memories” (p. 22). Her chapter title states the movement this project tracks: from traumatic image to narrative.</p>
+    <p>MacCurdy’s most compact statement of what that movement gives back is also a claim about authorship: “We write our trauma; our trauma does not write us” (p. 2). Her translation model and van der Kolk and Fisler’s clinical sequence describe the same movement from opposite sides. The clinicians document that narrative emerges after fragments; MacCurdy documents how a writer makes it emerge. Neither names the capacity that bridges them. Recovery literacy does.</p>
+    <p>This is also where Ong’s smaller claim earns its place. Ong’s writer gains distance from what was too close to see. If shaping a text can restructure thought, then the act of composing might also reshape what a writer can reach. A fragment set down on an index card, linked to another, then placed inside an actual index is no longer just a memory. It becomes something the writer can stand back from, move around, and read. In <em>What Happened,</em> that position is an index entry. The entry “Memory, unreliable?” carries its own question mark. The maker could not vouch for the page it pointed to. The question mark is part of the composition.</p>
+  </section>
+
+  <!-- ============ V ============ -->
+  <section class="view card" id="s5" hidden aria-labelledby="t-s5">
+    <header><span class="numeral">V</span><h2 id="t-s5">Recovery Literacy: The Distributed Layer</h2></header>
+    <p>If, as one of MacCurdy’s students wrote, a survivor without their narrative “would be wandering helpless, fragmented, and alone” (2007, p. 3), then naming what restores it matters. The pieces are now in place. Literacy, after Gee and the New London Group, is a social practice and a design act that transforms the designer. Recovery, after van der Kolk and Fisler, is fragments becoming a narrative one can tell. Together, recovery literacy is the practice of reclaiming authorship of one’s own narrative: the design act performed on materials that trauma has made unavailable, until they become available.</p>
+    <p>The definition is deliberately modest. It does not claim that writing heals, or that every survivor should write. It claims that composing is one way a story that was out of reach can be brought into consciousness. As McGranahan concludes from Butler’s account of self-narration, “dispossession thus both enables and constrains one’s ability to narrate” (2010, p. 769). The qualifier matters because the clinical record cuts both ways. Van der Kolk and Fisler’s five subjects who could not yet narrate were not failing at literacy: their fragments had not yet become material they could design with. Recovery literacy names a capacity, not an obligation, and a capacity can be partial. A survivor may reach one entry but not the next.</p>
+    <p>The definition also does something that the well-being model of recovery cannot. Well-being asks whether a person is doing better; recovery literacy asks whether they can reach, shape, and tell an experience. Those are literacy questions. They can be asked of a text, which is why a Twine can be read through them, and they can be asked of a reader as well as a maker.</p>
+    <p>One more consequence follows. If recovery literacy is a literacy in Gee’s sense, then it is social even when practiced alone. The index of <em>What Happened</em> was composed in private, on cards, but the form it took, an index, is a shared convention that tells a reader how to move through a text. The story was reclaimed partly by borrowing a reader’s expectations.</p>
+    <p>The term is not new, and this project owes its name to the scholar who brought it into rhetoric and composition. Bacibianco (2026), describing her podcast <em>Voices from Rock Bottom</em> and the storytelling constraints of Alcoholics Anonymous, uses “recovery literacy” for the narrative practices of addiction recovery, and sets out to challenge “the narrative authority of recovery literacy culture” (p. 144) through what she calls queerstory. For Bacibianco, recovery literacy is a culture of telling with its own conventions, and her project is to open those conventions to tellers that AA’s framework excludes. Her closing argument reframes the term as “a rhetorical practice of embodiment, of listening, telling, and acting” (p. 165).</p>
+    <p>This project extends her term along two lines. First, from addiction to trauma broadly: the narrative dispossession Herman describes is not confined to substance use, and the fragments-first pattern holds across trauma types. Second, from the social to the internal. Bacibianco’s concern is who gets to tell and in what form. Mine is the layer before that: whether the teller can reach the story at all. Both are questions of authorship. If hers concerns the room, then mine concerns the door.</p>
+    <p>A third use should be acknowledged to avoid confusion. In the addiction field, noted by the Recovery Research Institute, “recovery literacy” also names a public-health competency: knowing what recovery resources exist and how to use them. That is literacy in the older sense of information skill. It is not the sense here, though a person may need both. What the three uses share is instructive. Each treats recovery as something a person composes rather than something that happens to them. The disagreement is only about what gets composed: a public story, a resource map, or the story’s own availability to its author.</p>
+    <p>Three further sources sharpen what is being reclaimed. Prior (1998) returns the argument to mediated authorship, the keyword that started this project. Drawing on Goffman, he notes that “the speaker” collapses three roles: “the animator, who actually utters the word; the author, who selects the sentiments and words; and the principal, whose positions are being represented in the words” (p. 145). Prior uses the split to show how authorship is distributed across people and tools, which is why he proposes “mediated authorship” as a unit of analysis for literate activity. For recovery literacy, the split locates the loss precisely. The survivor remains the principal; it is their position the story would represent. Their body may even be the animator, replaying the fragments. What trauma takes is the author role, the selecting of words. That is the role recovery literacy reclaims.</p>
+    <p>Reclaiming it is neither a solitary act nor a new one. Haas (2007) locates nonlinear, memory-bearing composition in wampum belts, which she reads as texts that extend human memory through interconnected design and associative storage and retrieval (p. 77), and in bodies that remember the weaving along with the belt (p. 93). Nonlinear, memory-bearing composition is not a Twine invention, and neither is composing with absence. McGranahan’s (2010) <em>narrative dispossession</em> comes from Tibetan women whose war histories their community will not recognize. Vest (2012), an enrolled Monacan scholar, uses it for a Virginia legend that replaced his people’s account of their own burial mound with a colonial romance, so that the Monacan became “an incipient memory without a homeland” (p. 110). Haas’s communities were also dispossessed of land, language, and the belts themselves. Narrative dispossession, as extended here, names an individual loss, not a collective one, and it does not claim equivalence with them. What it takes from them is a distinction. Vest notes that the Monacan recovered and reburied their ancestors’ remains, “although an authentic narrative account of the Hayes Creek Indian mound is lacking” (p. 112). The material can come home before the story does. Recovery literacy concerns that second return.</p>
+    <p>Rumsey (2009) supplies the verbs here. Heritage literacy, in her account, tracks “how certain practices, tools, and concepts are adapted, adopted, or alienated from use, depending on the context” (p. 575), a decision-making process a person may not even be conscious of (p. 577). Recovery literacy is heritage literacy turned on one’s own history: choosing what to carry, what to reshape, and what to leave as a REDACTED page.</p>
+  </section>
+
+  <!-- ============ VI ============ -->
+  <section class="view card" id="s6" hidden aria-labelledby="t-s6">
+    <header><span class="numeral">VI</span><h2 id="t-s6">Reading <em>What Happened: Indexed Evidence</em></h2></header>
+    <p>Salter and Moulthrop (2021) describe Twine as “at its heart a system for making passages and links that the user navigates to different ends” (p. 3), a tool whose interface encourages makers to “think and work in nodes” and lets “any thought become a connection” (p. 6). That is how <em>What Happened</em> was made: on index cards, one entry at a time, before any passage was typed. The framework asks of the result three things. What navigation lets a reader reach. In what order. What it withholds.</p>
+    <p>The first decision was the index itself. A back-of-book index is all pointers and no body. It promises that for every heading there is a page. It presents experience already sorted, alphabetized, cross-referenced, done. Van der Kolk and Fisler’s subjects had fragments and no narrative. An index has headings and no prose. The form reproduces the condition it describes.</p>
+    <figure>
+      <img src="img/fig5.png" alt="A screenshot of the Twine editor on a dark grid background, showing about forty passage boxes connected by arrows. Across the top, cover, blankpage, Index, and Age, young run left to right. Below them, entries such as silence, gaslighting, isolation, social, need, paradox of, and belief (in him) branch and cross-link. A vertical chain in the center runs from help, asking for to memory, unreliable, then REDACTED, blank, and not found. A separate chain runs from need, paradox of to thing, the and then Definition." width="842" height="728">
+      <figcaption><b>Figure 5</b><i>Story Map of</i> What Happened <i>in Twine.</i> A fixed opening path (cover, blank page, index) opens into a web of linked entries. The longest unbroken line runs from “help, asking for” through “memory, unreliable” and REDACTED to “blank” and “not found.”</figcaption>
+    </figure>
+    <p>The second decision was the order of arrival. Cover, then blank page, then index, then a web. The blank page comes first, before anything, and a reader may think it’s an error. It isn’t. It tells the reader the gaps in this story are structural, and that they come before the story does. From the index, a reader can go almost anywhere. Every path runs through entries. Entries route to page numbers. Page numbers may or may not open. Salter and Moulthrop describe makers “offering players choices but then restricting them to produce manageable, and meaningful, narrative play” (pp. 3–4). Here the reader has freedom of order and no freedom of access.</p>
+    <p>The third decision was what to withhold. The chart makes this visible. The entry with the most page references, fourteen, is “Silence.” The entry with the fewest, one, is “Age, young.” The story’s most documented condition is the absence of telling, and its least documented is its starting point. Not every “see also” links. Some pages are REDACTED. One search returns nothing. They belong to what McGranahan (2010) calls “the genre of the untold” (p. 770).</p>
+    <figure>
+      <img src="img/fig6.png" alt="A horizontal bar chart. Bars descend from Silence at 14 references, through Leaving, prevention of at about 13 and Monitoring at about 9, to Age, young at 1. Labeled entries include Leaving, inability; Hope, cyclical; Normalized; Isolation, social; Good days; Memory, unreliable?; Responsibility, misplaced; Alone, increasingly; Need, paradox of; Family, distance from; Safety, lack of; and Environment, unstable emotional. A note reads Page ranges are counted as one reference." width="759" height="531">
+      <figcaption><b>Figure 6</b><i>Page References per Entry in</i> What Happened: Indexed Evidence. “Silence” carries the most page references (14), and “Age, young” carries the fewest (1). Page ranges count as one reference.</figcaption>
+    </figure>
+    <h3>Unreachable</h3>
+    <p>On the story map, “help, asking for” leads to “Memory, unreliable,” then REDACTED, then a blank page, then “not found”: a five-step path to nothing, the longest unbroken line on the map. A reader who follows it performs the sequence van der Kolk and Fisler’s subjects described: an attempt to retrieve, a sensory trace, and no story at the end (1995, p. 517). The unlinked “see also” terms are quieter. A see-also asserts adjacency; when the term is present but not clickable, the connection is named and the crossing denied. That is Herman’s disconnection built into navigation. “Silence” ties the two together. It is the most reachable entry in the index, and it is the one about not telling.</p>
+    <p class="hand">Fourteen times, I wrote down that I didn’t say anything.</p>
+    <h3>Fragmented</h3>
+    <p>An index entry is the textual equivalent of the “somatosensory or emotional flashback experiences” that van der Kolk and Fisler’s subjects reported as their initial mode of awareness (p. 517). “Isolation, social” with six references is not a scene; it is a label and a set of coordinates. The experience has been sorted before it has been told. “Memory, unreliable?” names the problem from the inside, the only heading in the index that doubts itself, and on the map it is the gateway to REDACTED. The entry about unreliable memory is the one through which the reader reaches the pages that cannot be opened.</p>
+    <h3>Shaped into a Story</h3>
+    <p>Three choices move the Twine toward a story one can tell. The breadcrumb trail records each reader’s path, so fragments visited in some order become a line, and no two readers produce the same one. That makes the Twine a sort of miniature mediated authorship: in Prior’s terms, the maker stays principal while the author role, selecting and sequencing, is shared with whoever reads, much as Gee’s (2012) gamers “co-author the games they play by the choices they make” (p. 420). And the definition of “the thing” is reached only through “need, paradox of,” the entry that first names needing the person who causes the harm. The central event becomes nameable only after the reader has passed through the contradiction that kept it unnamed. It is the least narrative way to tell the thing, and it is the first and only place it is told.</p>
+  </section>
+
+  <!-- ============ VII ============ -->
+  <section class="view card" id="s7" hidden aria-labelledby="t-s7">
+    <header><span class="numeral">VII</span><h2 id="t-s7">Questions for Reaching a Story</h2></header>
+    <p>The heuristic that follows borrows its shape from Cook (2002), who proposed “a theoretical frame for technical communication pedagogy based on six layered literacies: basic, rhetorical, social, technological, ethical, and critical” (p. 5). Surveying the historical frames that had each named one competency, Cook argued that none “fully articulate the multiple literacies necessary” and offered the layered frame as “a more integrative frame that incorporates all of these literacies into a single articulation” (p. 8). The word <em>layered</em> is the useful one. Cook's literacies are not stages. They operate at once, and a single act of composing can be read through all six.</p>
+    <p>The frame has proved extensible, which is why it suits a project proposing a new literacy. Swacha (2018), finding that “missing from this list, however, is any recognition of embodiment,” argued for embodied literacy as “a distinct seventh literacy” (p. 262). Bivens et al. (2018), writing in this journal, borrowed Cook's frame to argue that health literacy “is an embodied, multisensory experience that is invariably mediated by healthcare technologies” and close their web text with a list of questions, a heuristic for reading technologies through aural, tactile, and visual literacies. Both precedents add a layer by showing what the existing six cannot see. Both keep the six.</p>
+    <p>Recovery literacy follows the same procedure with one difference: rather than adding a layer, it puts one question to each of Cook’s six. Does this layer, in this work, let a maker or a reader reach the story and compose it? Cook built the frame for assessing a curriculum. Bivens et al. turned it toward technologies and their users. Here it is turned toward a work and toward the person on either side of it.</p>
+    <h3>Questions for Reaching a Story</h3>
+    <p>The heuristic asks one or two questions per layer. Each is written to be answered about a specific work, by its maker or by a reader, and each has already been asked of <em>What</em> <em>Happened</em>.</p>
+    <div class="qlist">
+    <p><strong>Basic.</strong>Can the story be read at all? What is literally on the page and what is literally absent from it?</p>
+    <p><strong>Rhetorical.</strong>Who is the story told to, and what does the telling ask of the audience? Does the work want a witness, a co-author, or a reader who leaves?</p>
+    <p><strong>Social.</strong>Whose conventions does the form borrow? An index, a podcast, a panel web text: each carries a community’s expectations about how a story moves, and those expectations do part of the work of telling.</p>
+    <p><strong>Technological.</strong>What does the navigation let a reader reach, and in what order? What does it withhold, and is the withholding a design or a failure?</p>
+    <p><strong>Ethical.</strong>Does the work let the maker decide what stays unreachable? A story one can tell is not a story one must tell. Does the form protect that distinction?</p>
+    <p><strong>Critical.</strong>What does the work reveal about why this story was hard to reach? Does it name the forces, inside or outside the maker, that made the story unavailable?</p>
+    </div>
+    <p>Three features distinguish these from Cook’s goals and Bivens et al.’s questions. First, they are asked of finished work, not a learner or a device. Second, each has two addressees. The maker answers from inside, with knowledge of what was withheld and why. The reader answers from the path they took. The two answers will differ, and the difference is data about how far the story has traveled from fragments toward something one can tell. Third, the questions do not score. A work that withholds much may be further along in recovery literacy than one that tells everything, if the withholding is chosen. The heuristic measures authorship, not disclosure.</p>
+    <p>Santos’s (2011) webtext answers the questions differently at nearly every layer, and the differences test the heuristic as much as the work. His story is one of narrative loss. The diagnosis disrupted “the anticipation of what should have been the narrative of Rowan’s life,” and for the parents the loss was total: “We lost our ‘normalcy.’ We lost the comfort of rhetorical support. We lost our selves” (Cancer, Loss, Change section). His account of what came next is the clearest statement in the Kairos archive of recovery as composition: “Social media offered rhetorical support by providing us with material to remix into our new story. It also provided us with people to affirm this story” (Cancer, Loss, Change section). Santos names the first half of recovery literacy, materials to compose with, and the second, an audience that confirms the composition.</p>
+    <p>The layers diverge from there. At the social layer, Santos’s story was told to a network from the start, and the network supplied the Available Designs; the index in <em>What Happened</em> was composed alone and borrowed a convention instead of a community. At the technological layer, the divergence is sharpest. Santos concedes “the potential irony of critiquing literate-print dependencies on narratives in what amounts to be, despite its hypertextual mediation, a linear narrative,” and locates his defense in the tenor of the telling, which is “not meant to be certain of itself and foreclose questioning” but “welcoming of other responses, angles, and stories” (Note 6). He even invites readers to send their stories. That is openness carried by voice. <em>What Happened</em> carries its openness in structure: a reader chooses the order, meets withheld pages, and leaves a trail no one else will leave. Under the heuristic, the two are not ranked. Santos’s story had already been composed, by the time of writing, into something he could tell; the panels record a recovery that happened elsewhere, on Babyfit and CaringBridge. <em>What Happened</em> is composed in the medium of its own unreachability.</p>
+    <p>That contrast exposes the heuristic’s real tension. It reads best the works that are still in the fragments-first stage, where navigation can enact what the story cannot yet say. A work made after the story has become tellable answers the technological question flatly. The heuristic should say so rather than mark the work down: the layer where the story is still being reached is the layer where the form has the most to do.</p>
+  </section>
+
+  <!-- ============ VIII ============ -->
+  <section class="view card" id="s8" hidden aria-labelledby="t-s8">
+    <header><span class="numeral">VIII</span><h2 id="t-s8">From One Story to Many: The Communal Layer</h2></header>
+    <p>The heuristic so far addresses one maker and one reader. Recovery literacy would be incomplete if it stopped there, because the clinical and literacy literature agrees that stories are reached in company. Herman’s survivor tells her story to someone. Santos’s remix needed people to affirm it. Bacibianco’s queerstory is a community practice before it is an individual one.</p>
+    <p>Chan and Gray (2020) describe the bridge. Writing about Black men’s streaming practices, they identify “the Black feminist tradition of ‘testifying’ or truth telling through story,” in which the content “is a dramatic narration and communal reenactment of individual and collective experiences” (p. 355). Testifying is one voice carrying a collective experience. The teller reaches their own story and, in reaching it, makes a shared one available to listeners who recognize it. This is recovery literacy at the social layer: an individual act of authorship that supplies Available Designs for others.</p>
+    <p>Hartmann and Gone (2014) mark the far end of that scale and its risk. American Indian historical trauma is defined by its leading advocates as “the collective emotional and psychological injury both over the life span and across generations, resulting from a cataclysmic history of genocide” (p. 274). Yet Hartmann and Gone also report the critique that the concept can function “as a harmful top-down narrative template that oversimplifies personal and collective experiences” (p. 276). A shared story can dispossess as well as restore. If the template arrives before the individual's fragments have become their own, it supplies a stand-in narrative in place of access to one.</p>
+    <p>The communal layer therefore adds a seventh question to the heuristic. Whose story does this work make reachable beyond its maker, and does it leave room for the listener’s own? Testifying passes that test because the listener recognizes rather than receives. A template fails it when recognition is replaced by assignment. McGranahan’s genre of the untold and Vest’s lost narrative account are both communal losses; recovery literacy at this scale means many entries, each with its own pages.</p>
+  </section>
+
+  <!-- ============ IX ============ -->
+  <section class="view card" id="s9" hidden aria-labelledby="t-s9">
+    <header><span class="numeral">IX</span><h2 id="t-s9">The Entry, Revisited</h2></header>
+    <p>Go back to the search. A reader types a question into <em>What Happened</em>, and the index answers: “This entry does not exist.”</p>
+    <p>It’s true, as far as pages go. No passage holds the thing that “Help, asking for” points toward. The REDACTED numbers lead to a blank. The blank leads to “not found.”</p>
+    <p>But the index has been writing the entry the whole time. Every heading is a piece of it. “Silence,” with fourteen references, is its longest chapter. “Memory, unreliable?” is how it knows what it knows. “Need, paradox of” is why it happened. “Thing, the” is its one direct sentence. The trail a reader leaves behind is a draft of it, in an order I couldn’t write it in myself. The entry does not exist as a page because it exists as the index. Fragments first, then a story one can tell: the index is what the story looks like while it is still being reached.</p>
+    <p>That is what recovery literacy names. Not the finished story. Not the healing. The capacity to build the structure that will hold the story once it can be told, and to let a reader walk through it before then. Literacy theory moved the obstacle to authorship outward until it was wholly external. Trauma moved it back in. Composing in the medium of what can’t yet be said is one way the obstacle becomes a form, and a form can be read.</p>
+    <p>McGranahan asked whether narrating a life is a matter of <em>if</em>. For the survivor, the <em>if</em> comes first.</p>
+    <p class="hand">The part of the story I don’t tell is the part the index is built around.</p>
+    <p><em>What Happened</em> is an attempt to say yes before the story is available, by marking the place where it will go.</p>
+    <p class="hand">The entry does not exist. The search for it does, and the search has pages.</p>
+  </section>
+
+  <!-- ============ REFERENCES ============ -->
+  <section class="view card refs" id="references" hidden aria-labelledby="t-refs">
+    <header><h2 id="t-refs" class="numeral">References</h2></header>
+    <p>Bacibianco, D. (2026). Voices from Rock Bottom: Queering addiction recovery rhetoric &amp; community literacy. <em>Reflections</em>, <em>25</em>(1), 104–171. https://doi.org/10.59236/rjv25i1pp104-171</p>
+    <p>Bivens, K. M., Arduser, L., Welhausen, C. A., &amp; Faris, M. J. (2018). A multisensory literacy approach to biomedical healthcare technologies: Aural, tactile, and visual layered health literacies. <em>Kairos: A Journal of Rhetoric, Technology, and Pedagogy, 22</em>(2). https://kairos.technorhetoric.net/22.2/topoi/bivens-et-al/index.html</p>
+    <p>Chan, B., &amp; Gray, K. (2020). Microstreaming, microcelebrity, and marginalized masculinity: Pathways to visibility and self-definition for Black men in gaming. <em>Women’s Studies in Communication, 43</em>(4), 354–362. https://doi.org/10.1080/07491409.2020.1833634</p>
+    <p>Cook, K. C. (2002). Layered literacies: A theoretical frame for technical communication pedagogy. <em>Technical Communication Quarterly</em>, <em>11</em>(1), 5–29. https://doi.org/10.1207/s15427625tcq1101_1</p>
+    <p>Ellis, C., Adams, T. E., &amp; Bochner, A. P. (2011). Autoethnography: An overview. <em>Forum Qualitative Sozialforschung / Forum: Qualitative Social Research, 12</em>(1), Article 10. https://doi.org/10.17169/fqs-12.1.1589</p>
+    <p>Gee, J. P. (2011). <em>Social linguistics and literacies: Ideology in discourses</em> (4th ed.). Routledge.</p>
+    <p>Gee, J. P. (2012). The old and the new in the new digital literacies. <em>The Educational Forum</em>, <em>76</em>(4), 418–420. https://doi.org/10.1080/00131725.2012.708622</p>
+    <p>Haas, A. M. (2007). Wampum as hypertext: An American Indian intellectual tradition of multimedia theory and practice. <em>Studies in American Indian Literatures, 19</em>(4), 77–100.</p>
+    <p>Haraway, D. J. (1996). Situated knowledges: The science question in feminism and the privilege of partial perspective. In <em>Simians, cyborgs and women: The reinvention of nature</em> (pp. 183–201). Free Association Books.</p>
+    <p>Hartmann, W. E., &amp; Gone, J. P. (2014). American Indian historical trauma: Community perspectives from two Great Plains medicine men. <em>American Journal of Community Psychology</em>, <em>54</em>(3–4), 274–288. https://doi.org/10.1007/s10464-014-9671-1</p>
+    <p>Hayles, N. K. (1999). <em>How we became posthuman: Virtual bodies in cybernetics, literature, and informatics</em>. University of Chicago Press.</p>
+    <p>Herman, J. L. (1997). <em>Trauma and recovery</em> (Rev. ed.). BasicBooks.</p>
+    <p>Kucer, S. B. (2005). <em>Dimensions of literacy: A conceptual base for teaching reading and writing in school settings</em> (2nd ed.). Lawrence Erlbaum Associates.</p>
+    <p>MacCurdy, M. M. (2007). <em>The mind’s eye: Image and memory in writing about trauma</em>. University of Massachusetts Press.</p>
+    <p>McGranahan, C. (2010). Narrative dispossession: Tibet and the gendered logics of historical possibility.<em>Comparative Studies in Society and History, 52</em>(4), 768–797. https://doi.org/10.1017/S0010417510000460</p>
+    <p>New London Group. (1996). A pedagogy of multiliteracies: Designing social futures. <em>Harvard Educational Review, 66</em>(1), 60–92.</p>
+    <p>Ong, W. J. (2002). <em>Orality and literacy: The technologizing of the word</em> (2nd ed.). Routledge.</p>
+    <p>Patino, N. (2026). <em>What happened: Indexed evidence</em> [Twine interactive narrative]. https://nikipatinoucf.github.io/index-what-happened/</p>
+    <p>Prior, P. A. (1998). <em>Writing/disciplinarity: A sociohistoric account of literate activity in the academy</em>. Lawrence Erlbaum Associates.</p>
+    <p>Ratto, M. (2011). Critical making: Conceptual and material studies in technology and social life. <em>The Information Society, 27</em>(4), 252–260.</p>
+    <p>Recovery Research Institute. (n.d.). <em>Recovery</em>. Retrieved November 4, 2026, from https://www.recoveryanswers.org/</p>
+    <p>Rumsey, S. K. (2009). Heritage literacy: Adoption, adaptation, and alienation of multimodal literacy tools. <em>College Composition and Communication, 60</em>(3), 573–586.</p>
+    <p>Salter, A., &amp; Moulthrop, S. (2021). <em>Twining: Critical and creative approaches to hypertext narratives</em>. Amherst College Press. https://doi.org/10.3998/mpub.12255695</p>
+    <p>Santos, M. C. (2011). How the Internet saved my daughter and how social media saved my family. <em>Kairos: A Journal of Rhetoric, Technology, and Pedagogy, 15</em>(2). http://kairos.technorhetoric.net/15.2/topoi/santos</p>
+    <p>Swacha, K. Y. (2018). “Bridging the gap between food pantries and the kitchen table”: Teaching embodied literacy in the technical communication classroom. <em>Technical Communication Quarterly, 27</em>(3), 261–282. https://doi.org/10.1080/10572252.2018.1476589</p>
+    <p>van der Kolk, B. A. (2014). <em>The body keeps the score: Brain, mind, and body in the healing of trauma</em>. Viking.</p>
+    <p>van der Kolk, B. A., &amp; Fisler, R. (1995). Dissociation and the fragmentary nature of traumatic memories: Overview and exploratory study. <em>Journal of Traumatic Stress, 8</em>(4), 505–525. https://doi.org/10.1002/jts.2490080402</p>
+    <p>Vee, A. (2013). Understanding computer programming as a literacy. <em>Literacy in Composition Studies, 1</em>(2), 42–64.</p>
+    <p>Vest, J. H. C. (2012). The legend of Jump Mountain: Narrative dispossession of the Monacan in postcolonial Virginia. <em>American Indian Culture and Research Journal</em>, <em>36</em>(3), 99–116. https://doi.org/10.17953/aicr.36.3.6jt8367282957424</p>
+  </section>
+
+  <nav class="pager" id="pager" aria-label="Page navigation"></nav>
+</div>
+
+<script>
+(function () {
+  var order = ["start", "about", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "references"];
+  var labels = { start: "Index", about: "Note", s1: "I", s2: "II", s3: "III", s4: "IV", s5: "V", s6: "VI", s7: "VII", s8: "VIII", s9: "IX", references: "References" };
+  var pager = document.getElementById("pager");
+  function show() {
+    var id = (location.hash || "").slice(1);
+    if (order.indexOf(id) === -1) id = "start";
+    order.forEach(function (v) { document.getElementById(v).hidden = (v !== id); });
+    var i = order.indexOf(id), html = "";
+    if (i > 0) html += '<a href="#' + order[i - 1] + '">← ' + labels[order[i - 1]] + "</a>";
+    html += '<span class="spacer"></span>';
+    if (i < order.length - 1) html += '<a href="#' + order[i + 1] + '">' + labels[order[i + 1]] + " →</a>";
+    pager.innerHTML = html;
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", show);
+  show();
+})();
+</script>
+</body>
+</html>
